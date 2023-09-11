@@ -45,7 +45,6 @@ namespace books.Controllers
 
                 if (booksFromApi.Count > 0)
                 {
-                    // check
                     // await StoreBooksInDatabase(booksFromApi);
                     List<BookInfo> bookInfos = booksFromApi;
                     await StoreBooksInDatabase(bookInfos);
