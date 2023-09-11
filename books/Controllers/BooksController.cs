@@ -41,7 +41,7 @@ namespace books.Controllers
             else
             {
                 var booksFromApi = await FetchBooksFromApiAsync();
-                //     RetrieveBooksFromDatabase(booksFromApi); // Add data from API to the database
+                //     RetrieveBooksFromDatabase(booksFromApi);
 
                 if (booksFromApi.Count > 0)
                 {
@@ -56,7 +56,10 @@ namespace books.Controllers
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private List<Book> RetrieveBooksFromDatabase()
         {
             List<Book> books = new List<Book>();
@@ -137,8 +140,8 @@ namespace books.Controllers
                                 Author = item.volumeInfo.authors != null ? string.Join(", ", item.volumeInfo.authors) : "No author",
                                 Title = item.volumeInfo.title,
                                 Publisher = item.volumeInfo.publisher,
-                                PublishedDate = item.volumeInfo.publishedDate
-                                //description=
+                                PublishedDate = item.volumeInfo.publishedDate,
+                                Description=item.volumeInfo.description
 
                             });
                         }
@@ -175,15 +178,17 @@ namespace books.Controllers
 
                 foreach (var bookInfo in bookInfos)
                 {
-                    // Check if the author already exists in the Authors table
+                    
                     int authorId = GetOrCreateAuthorId(connection, bookInfo.Author);
 
-                    // Check if the publisher already exists in the Publishers table
+                   
                     int publisherId = GetOrCreatePublisherId(connection, bookInfo.Publisher, bookInfo.PublishedDate);
 
-                    // Insert into the Books table
-                    string insertBookSql = "INSERT INTO Books (title, author_id, publisher_id, description) VALUES (@Title, @AuthorId, @PublisherId, @Description)";
+                    int bookId = GetUniqueBookId(connection);
+
+                    string insertBookSql = "INSERT INTO Books (book_id, title, author_id, publisher_id, description) VALUES (@BookId, @Title, @AuthorId, @PublisherId, LEFT(@Description, 1000))";
                     SqlCommand insertBookCommand = new SqlCommand(insertBookSql, connection);
+                    insertBookCommand.Parameters.AddWithValue("@BookId", bookId);
                     insertBookCommand.Parameters.AddWithValue("@Title", bookInfo.Title);
                     insertBookCommand.Parameters.AddWithValue("@AuthorId", authorId);
                     insertBookCommand.Parameters.AddWithValue("@PublisherId", publisherId);
@@ -208,7 +213,7 @@ namespace books.Controllers
             }
             else
             {
-                // Author doesn't exist, insert into Authors table
+                
                 string insertAuthorSql = "INSERT INTO Authors (author_name) VALUES (@AuthorName); SELECT SCOPE_IDENTITY();";
                 SqlCommand insertAuthorCommand = new SqlCommand(insertAuthorSql, connection);
                 insertAuthorCommand.Parameters.AddWithValue("@AuthorName", author);
@@ -232,13 +237,28 @@ namespace books.Controllers
             }
             else
             {
-                // Publisher doesn't exist, insert into Publishers table
+               
                 string insertPublisherSql = "INSERT INTO Publishers (publisher_name, published_date) VALUES (@PublisherName, @PublishedDate); SELECT SCOPE_IDENTITY();";
                 SqlCommand insertPublisherCommand = new SqlCommand(insertPublisherSql, connection);
                 insertPublisherCommand.Parameters.AddWithValue("@PublisherName", publisherName);
                 insertPublisherCommand.Parameters.AddWithValue("@PublishedDate", publishedDate);
 
                 return Convert.ToInt32(insertPublisherCommand.ExecuteScalar());
+            }
+        }
+         int GetUniqueBookId(SqlConnection connection)
+        {
+          
+            string selectMaxBookIdSql = "SELECT MAX(book_id) FROM Books";
+            SqlCommand selectMaxBookIdCommand = new SqlCommand(selectMaxBookIdSql, connection);
+            var maxId = selectMaxBookIdCommand.ExecuteScalar();
+            if (maxId == DBNull.Value)
+            {
+                return 1; 
+            }
+            else
+            {
+                return (int)maxId + 1; 
             }
         }
 

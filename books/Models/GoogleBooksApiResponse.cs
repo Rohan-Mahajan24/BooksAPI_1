@@ -36,6 +36,8 @@ namespace books.Models
         public string title { get; set; }
         public string publisher { get; set; }
         public string publishedDate { get; set; }
+
+        public string description { get; set; }
     }
 }
 
