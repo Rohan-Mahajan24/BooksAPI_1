@@ -22,9 +22,108 @@ namespace books.Controllers
             _configuration = configuration;
         }
 
+        [HttpGet("{bookId}")]
+        public IActionResult GetBookById(int bookId)
+        {
+            var book = RetrieveBookByIdFromDatabase(bookId);
+
+            if (book != null)
+            {
+                return Ok(book);
+            }
+            else
+            {
+                return NotFound($"Book with ID {bookId} not found.");
+            }
+        }
+
+        private Book RetrieveBookByIdFromDatabase(int bookId)
+        {
+            try
+            {
+                string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string selectSql = "SELECT b.book_id, b.title, a.author_name, p.publisher_name, p.published_date, b.description" +
+                                       " FROM Books b" +
+                                       " INNER JOIN Authors a ON b.author_id = a.author_id" +
+                                       " INNER JOIN Publishers p ON b.publisher_id = p.publisher_id" +
+                                       " WHERE b.book_id = @BookId";
+                    SqlCommand command = new SqlCommand(selectSql, connection);
+                    command.Parameters.AddWithValue("@BookId", bookId);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        var book = new Book
+                        {
+                            publisher_id = reader.GetInt32(0),
+                            title = reader.GetString(1),
+                            author_name = reader.GetString(2),
+                            publisher_name = reader.GetString(3),
+                            published_date = reader.GetString(4),
+                            description = reader.GetString(5)
+                        };
+
+                        return book;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
+            return null;
+        }
+
+
+        [HttpDelete("{bookId}")]
+        public IActionResult DeleteBookById(int bookId)
+        {
+            if (DeleteBookFromDatabase(bookId))
+            {
+                return NoContent();
+            }
+            else
+            {
+                return NotFound($"Book with ID {bookId} not found.");
+            }
+        }
+
+        private bool DeleteBookFromDatabase(int bookId)
+        {
+            try
+            {
+                string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string deleteSql = "DELETE FROM Books WHERE book_id = @BookId";
+                    SqlCommand command = new SqlCommand(deleteSql, connection);
+                    command.Parameters.AddWithValue("@BookId", bookId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    return rowsAffected > 0; 
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
 
         [HttpGet]
-        public async Task<IActionResult> GetAllBooks([FromQuery] bool seed = true)//seed=faalse
+        public async Task<IActionResult> GetAllBooks([FromQuery] bool seed = true)//seed=false
         {
             if (seed)
             {
@@ -153,7 +252,7 @@ namespace books.Controllers
                 else
                 {
                     Console.WriteLine($"API request failed with status code: {response.StatusCode}");
-                    var jsonFile = @"C:\Users\RMahajan\Desktop\BooksAPI_1\books\Controllers\booksss.json";
+                    var jsonFile = @"C:\Users\RMahajan\Desktop\BooksAPI_1\books\Controllers\books.json";
                     using (StreamReader reader = new StreamReader(jsonFile))
                     {
                         var jsonString = reader.ReadToEnd();
