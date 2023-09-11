@@ -1,0 +1,768 @@
+[
+  {
+    "kind": "books#volumes",
+    "totalItems": 1440,
+    "items": [
+      {
+        "kind": "books#volume",
+        "id": "XnqeQAAACAAJ",
+        "etag": "SxPTerIUTk8",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/XnqeQAAACAAJ",
+        "volumeInfo": {
+          "title": "Kaplan DAT",
+          "authors": [
+            "Kaplan"
+          ],
+          "publisher": "Kaplan Publishing",
+          "publishedDate": "2010-05-04",
+          "description": "Competition to enroll in dental school is at its all-time peak. As the #1 best-selling guide for dental school admissions, Kaplan DAT offers the targeted training students need to achieve a high score. The DAT, required for acceptance to all U.S. dental schools, is designed to measure general academic ability, comprehension of scientific information, and perceptual ability. Kaplan DAT prepares students by providing two full-length practice tests with detailed answer explanations, intensive science and quantitative reviews, a reading comprehension practice section, and test-like exercises for the perceptual ability test. Also included is a full-color pull-out study guide that maximizes students’ learning and memorization through the use of images, charts, facts, and diagrams. For anyone looking to achieve a competitive score on this challenging test, Kaplan DAT provides the best preparation available.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "1607146592"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9781607146599"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 0,
+          "printType": "BOOK",
+          "categories": [
+            "Study Aids"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=XnqeQAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=XnqeQAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=XnqeQAAACAAJ&dq=kaplan+test+prep&hl=&cd=1&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=XnqeQAAACAAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Kaplan_DAT.html?hl=&id=XnqeQAAACAAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=XnqeQAAACAAJ&hl=&source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Kaplan DAT prepares students by providing two full-length practice tests with detailed answer explanations, intensive science and quantitative reviews, a reading comprehension practice section, and test-like exercises for the perceptual ..."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "HDPsAAAACAAJ",
+        "etag": "6emnlyHe7Us",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/HDPsAAAACAAJ",
+        "volumeInfo": {
+          "title": "Kaplan DAT",
+          "authors": [
+            "Kaplan, Inc"
+          ],
+          "publisher": "Kaplan",
+          "publishedDate": "2002",
+          "description": "Each year 10,000 prospective dental students take the DAT. Filled with powerful strategies for scoring higher on the DAT, content review, and practice tests with detailed answer explanations, Kaplan's acclaimed DAT review package is an indispensable tool. Charts & diagrams.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "0743235061"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9780743235068"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 0,
+          "printType": "BOOK",
+          "categories": [
+            "Dental schools"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=HDPsAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=HDPsAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=HDPsAAAACAAJ&dq=kaplan+test+prep&hl=&cd=2&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=HDPsAAAACAAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Kaplan_DAT.html?hl=&id=HDPsAAAACAAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=HDPsAAAACAAJ&hl=&source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Filled with powerful strategies for scoring higher on the DAT, content review, and practice tests with detailed answer explanations, Kaplan&#39;s acclaimed DAT review package is an indispensable tool. Charts &amp; diagrams."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "7F_sDwAAQBAJ",
+        "etag": "KlzYNS5gDG8",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/7F_sDwAAQBAJ",
+        "volumeInfo": {
+          "title": "MCAT Complete 7-Book Subject Review 2021-2022",
+          "subtitle": "(Online + Book + 3 Practice Tests)",
+          "authors": [
+            "Kaplan Test Prep"
+          ],
+          "publisher": "Kaplan Publishing",
+          "publishedDate": "2020-07-07",
+          "description": "Kaplan’s MCAT Complete 7-Book Subject Review 2021–2022 includes updates across all 7 books to reflect the latest, most accurate, and most testable materials on the MCAT. New layouts make our books even more streamlined and intuitive for easier review. You’ll get efficient strategies, detailed subject review, and three full-length online practice tests—all authored by the experts behind the MCAT prep course that has helped more people get into medical school than all other major courses combined. Efficient Strategies and In-Depth Review Guided Examples with Expert Thinking in our Behavioral Sciences, Biochemistry, and Biology books present scientific articles and walk you through challenging open-ended questions. Entirely revamped CARS content with updated methods for the latest exam challenges High Yield badges indicate the most testable content based on AAMC materials Concept summaries that boil down the need-to-know information in each chapter, including any necessary equations to memorize Full-color, 24-page MCAT Quicksheets emphasize the most important information in visual form Chapter Profiles indicate the degree to which each chapter is tested and the testmaker content categories to which it aligns Charts, graphs, diagrams, and full-color, 3-D illustrations from Scientific American help turn even the most complex science into easy-to-visualize concepts. Realistic Practice One-year online access to 3 full-length practice tests, instructional videos, practice questions, and quizzes Hundreds of practice questions in the books show you how to apply concepts and equations 15 multiple-choice “Test Your Knowledge” questions at the end of each chapter for all books except CARS Learning objectives and concept checks ensure you’re focusing on the most important information in each chapter Expert Guidance Sidebars illustrate connections between concepts and include references to more information, real-world tie ins, mnemonics, and MCAT-specific tips Comprehensive subject review written by top-rated, award-winning Kaplan instructors who guide you on where to focus your efforts and how to organize your review. All material is vetted by editors with advanced science degrees and by a medical doctor. We know the test: The Kaplan MCAT team has spent years studying every MCAT-related document available, and our experts ensure our practice questions and study materials are true to the test",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_13",
+              "identifier": "9781506262369"
+            },
+            {
+              "type": "ISBN_10",
+              "identifier": "1506262368"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 577,
+          "printType": "BOOK",
+          "categories": [
+            "Study Aids"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "0.0.1.0.preview.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=7F_sDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=7F_sDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=7F_sDwAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=3&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=7F_sDwAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/MCAT_Complete_7_Book_Subject_Review_2021.html?hl=&id=7F_sDwAAQBAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "PARTIAL",
+          "embeddable": true,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=7F_sDwAAQBAJ&hl=&source=gbs_api",
+          "accessViewStatus": "SAMPLE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Realistic Practice One-year online access to 3 full-length practice tests, instructional videos, practice questions, and quizzes Hundreds of practice questions in the books show you how to apply concepts and equations 15 multiple-choice ..."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "SsLYDwAAQBAJ",
+        "etag": "HarbgXc8FRg",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/SsLYDwAAQBAJ",
+        "volumeInfo": {
+          "title": "Princeton Review ASVAB Prep, 5th Edition",
+          "subtitle": "4 Practice Tests + Complete Content Review + Strategies & Techniques",
+          "authors": [
+            "The Princeton Review"
+          ],
+          "publisher": "Princeton Review",
+          "publishedDate": "2020-04-21",
+          "description": "IF IT'S ON THE ASVAB, WE'VE GOT IT COVERED IN THIS BOOK. The Princeton Review’s ASVAB Prep, 5th Edition brings you everything you need to do well on the Armed Services Vocational Aptitude Battery (ASVAB) set of exams—a.k.a., the test you'll need to take to join the U.S. military. Your ASVAB score is important: It's used not only to ensure you qualify to enlist, but also to determine how qualified you are for specific Military Occupational Specialities and even some enlistment bonuses. Scoring well on the ASVAB can increase your chances of getting the speciality job you want. Inside ASVAB Prep, you’ll find easy-to-understand, thorough reviews of the topics the tests will cover, straightforward strategies for working through tough questions, and all the practice you need to get put your best foot forward with a high ASVAB score. This 5th Edition includes: · 4 full-length practice ASVAB tests with detailed answer explanations · Tried-and-true strategies to help you avoid traps and beat the test · Diagrams, charts, and visual aids to simplify memorization · An extensive vocabulary list to help you prepare for the Word Knowledge and Paragraph Comprehension sections of the test · 200+ additional practice questions with step-by-step answers and explanations",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_13",
+              "identifier": "9780525569244"
+            },
+            {
+              "type": "ISBN_10",
+              "identifier": "0525569243"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 514,
+          "printType": "BOOK",
+          "categories": [
+            "Study Aids"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=SsLYDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=SsLYDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=SsLYDwAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=4&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=SsLYDwAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Princeton_Review_ASVAB_Prep_5th_Edition.html?hl=&id=SsLYDwAAQBAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "PARTIAL",
+          "embeddable": true,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=SsLYDwAAQBAJ&hl=&source=gbs_api",
+          "accessViewStatus": "SAMPLE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "IF IT&#39;S ON THE ASVAB, WE&#39;VE GOT IT COVERED IN THIS BOOK."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "iehZEAAAQBAJ",
+        "etag": "nl3at05noHU",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/iehZEAAAQBAJ",
+        "volumeInfo": {
+          "title": "GED Test Prep 2022-2023",
+          "subtitle": "2 Practice Tests + Proven Strategies + Online",
+          "authors": [
+            "Caren Van Slyke"
+          ],
+          "publisher": "Simon and Schuster",
+          "publishedDate": "2022-02-01",
+          "description": "With realistic practice, proven strategies, and expert guidance, Kaplan's GED Test Prep 2022–2023 gives you everything you need to pass the test. Kaplan is the official partner for online prep for the GED test, and our content is 100% aligned with the GED test objectives. Kaplan’s GED Test Prep 2022-2023 is designed to be your one-stop self-study guide so you can prep at your own pace, on your own schedule. We’re so confident that GED Test Prep 2022–2023 offers the guidance you need that we guarantee it: After studying with our book, you'll pass the GED—or you'll get your money back. The Best Practice More than 1,000 practice questions Two full-length practice tests: one in the book and one online with feedback A diagnostic pretest to help you set up a personalized study plan Essential skills and review for all GED subjects: Reasoning through Language Arts, Mathematical Reasoning, Science, and Social Studies Effective strategies for writing the RLA extended response Clear instructions on using the Texas Instruments TI-30XS MultiView calculator Expert Guidance Our books and practice questions are written by teachers who know students—every explanation is written to help you learn. We know the test: The Kaplan team has put tens of thousands of hours into studying the GED—we use real data to design the most effective strategies and study plans. We invented test prep—Kaplan (www.kaptest.com) has been helping students for 80 years, and our proven strategies have helped legions of students achieve their dreams. Want more expert guidance in 60 online videos? Try GED Test Prep Plus 2022–2023.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_13",
+              "identifier": "9781506282121"
+            },
+            {
+              "type": "ISBN_10",
+              "identifier": "1506282121"
+            }
+          ],
+          "readingModes": {
+            "text": true,
+            "image": false
+          },
+          "pageCount": 780,
+          "printType": "BOOK",
+          "categories": [
+            "Study Aids"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": true,
+          "contentVersion": "1.1.1.0.preview.2",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=iehZEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=iehZEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=iehZEAAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=5&source=gbs_api",
+          "infoLink": "https://play.google.com/store/books/details?id=iehZEAAAQBAJ&source=gbs_api",
+          "canonicalVolumeLink": "https://play.google.com/store/books/details?id=iehZEAAAQBAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "FOR_SALE",
+          "isEbook": true,
+          "listPrice": {
+            "amount": 17.49,
+            "currencyCode": "USD"
+          },
+          "retailPrice": {
+            "amount": 17.49,
+            "currencyCode": "USD"
+          },
+          "buyLink": "https://play.google.com/store/books/details?id=iehZEAAAQBAJ&rdid=book-iehZEAAAQBAJ&rdot=1&source=gbs_api",
+          "offers": [
+            {
+              "finskyOfferType": 1,
+              "listPrice": {
+                "amountInMicros": 17490000,
+                "currencyCode": "USD"
+              },
+              "retailPrice": {
+                "amountInMicros": 17490000,
+                "currencyCode": "USD"
+              },
+              "giftable": true
+            }
+          ]
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "PARTIAL",
+          "embeddable": true,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+          "epub": {
+            "isAvailable": true,
+            "acsTokenLink": "http://books.google.com/books/download/GED_Test_Prep_2022_2023-sample-epub.acsm?id=iehZEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=iehZEAAAQBAJ&hl=&source=gbs_api",
+          "accessViewStatus": "SAMPLE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "The Best Practice More than 1,000 practice questions Two full-length practice tests: one in the book and one online with feedback A diagnostic pretest to help you set up a personalized study plan Essential skills and review for all GED ..."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "NYThDwAAQBAJ",
+        "etag": "nu/9O32oiyA",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/NYThDwAAQBAJ",
+        "volumeInfo": {
+          "title": "GRE Prep Plus 2021",
+          "subtitle": "6 Practice Tests + Proven Strategies + Online + Video + Mobile",
+          "authors": [
+            "Kaplan Test Prep"
+          ],
+          "publisher": "Kaplan Publishing",
+          "publishedDate": "2020-06-02",
+          "description": "Kaplan's GRE Prep Plus 2021 guides you through the GRE step-by-step, with expert strategies, essential content review, and five online practice tests. Get an advantage on test day with our proven test-taking strategies, math skills review, and one-year access to online practice and lessons. We’re so certain that GRE Prep Plus 2021 offers all the knowledge you need to excel at the GRE that we guarantee it: After studying with the online resources and book, you'll score higher on the GRE—or you'll get your money back. The Best Practice Five full-length online tests help you practice in the same computer-based format you'll see on test day. One full-length practice test included in the book for easier reference and review. More than 1,700 questions with detailed explanations. Personalize your study plan with the individual performance summary you'll receive after each online practice test. Customize your practice with a 500-question online Qbank that lets you select problems by topic and difficulty. Chapters on each GRE question type and math skill, with practice sets for each. Questions have been reviewed, revised, and updated by Kaplan's expert faculty. Efficient Strategies and Expert Guidance Expert videos on stress-reduction techniques and study planning tactics that can help you ace the GRE. GRE Prep Plus 2021 comes with one-on-one academic support from Kaplan faculty via our Facebook page: facebook.com/KaplanGradPrep We know the test: The Kaplan team has spent years studying every GRE-related document available. Kaplan's experts ensure our practice questions and study materials are true to the test. We invented test prep—Kaplan (www.kaptest.com) has been helping students for 80 years. Our proven strategies have helped legions of students achieve their dreams. Want to boost your studies with even more online practice and in-depth GRE math and verbal workbooks? Try Kaplan's GRE Complete 2021.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_13",
+              "identifier": "9781506262437"
+            },
+            {
+              "type": "ISBN_10",
+              "identifier": "1506262430"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 709,
+          "printType": "BOOK",
+          "categories": [
+            "Study Aids"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "0.1.1.0.preview.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=NYThDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=NYThDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=NYThDwAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=6&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=NYThDwAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/GRE_Prep_Plus_2021.html?hl=&id=NYThDwAAQBAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "PARTIAL",
+          "embeddable": true,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=NYThDwAAQBAJ&hl=&source=gbs_api",
+          "accessViewStatus": "SAMPLE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "The Best Practice Five full-length online tests help you practice in the same computer-based format you&#39;ll see on test day. One full-length practice test included in the book for easier reference and review."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "Wl-2DwAAQBAJ",
+        "etag": "4S13RePow7k",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/Wl-2DwAAQBAJ",
+        "volumeInfo": {
+          "title": "GMAT Prep Plus 2021",
+          "subtitle": "6 Practice Tests + Proven Strategies + Online + Mobile",
+          "authors": [
+            "Kaplan Test Prep"
+          ],
+          "publisher": "Simon and Schuster",
+          "publishedDate": "2020-07-07",
+          "description": "Always study with the most up-to-date prep! Look for GMAT Prep Plus 2022–2023, ISBN 9781506277233, on sale December 14, 2021. Publisher's Note: Products purchased from third-party sellers are not guaranteed by the publisher for quality, authenticity, or access to any online entitles included with the product.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_13",
+              "identifier": "9781506262383"
+            },
+            {
+              "type": "ISBN_10",
+              "identifier": "1506262384"
+            }
+          ],
+          "readingModes": {
+            "text": true,
+            "image": false
+          },
+          "pageCount": 1576,
+          "printType": "BOOK",
+          "categories": [
+            "Study Aids"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": true,
+          "contentVersion": "1.2.2.0.preview.2",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=Wl-2DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=Wl-2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=Wl-2DwAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=7&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=Wl-2DwAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/GMAT_Prep_Plus_2021.html?hl=&id=Wl-2DwAAQBAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "PARTIAL",
+          "embeddable": true,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+          "epub": {
+            "isAvailable": true,
+            "acsTokenLink": "http://books.google.com/books/download/GMAT_Prep_Plus_2021-sample-epub.acsm?id=Wl-2DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=Wl-2DwAAQBAJ&hl=&source=gbs_api",
+          "accessViewStatus": "SAMPLE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Always study with the most up-to-date prep! Look for GMAT Prep Plus 2022–2023, ISBN 9781506277233, on sale December 14, 2021."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "7OhjTmGTDf8C",
+        "etag": "O6c77vGTMus",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/7OhjTmGTDf8C",
+        "volumeInfo": {
+          "title": "Kaplan LSAT 2002-2003",
+          "authors": [
+            "Kaplan"
+          ],
+          "publishedDate": "2002-07",
+          "description": "You will score higher. We guarantee it. Kaplan's LSAT 2003 comes complete with a comprehensive review of all the material on the exam, plus Kaplan's test-taking strategies to maximize your score. This powerful combination is a highly effective way for you to score higher on the LSAT and make you and your application competitive for law school admissions. Succeed on the Writing Sample with Kaplan's expert strategies for constructing clear, concise, and high-scoring essays. Prepare with hundreds of practice questions for Logic Games, Logical Reasoning, and Reading Comprehension. Practice with 3 full-length LSATs, complete with explanations for every answer and detailed score analysis. Score Higher with effective strategies and advice from Kaplan's top instructors. Sign up for the Law School Edge. Tap into Kaplan's expertise with the Law School Edge, our free email newsletter. Filled with admissions tips, the latest test and career news, important deadline reminders, study aids, and more, the Law School Edge is an excellent resource for critical business school admissions information. Sign up today at kaptest.com Test Prep, Admissions and Guidance. For life. Kaplan has helped more than 3 million students achieve their educational and career goals. With 185 centers and more than 1,200 classroom locations throughout the U.S. and abroad, Kaplan provides a full range of services, including test prep courses, admissions consulting, programs for international students, professional licensing preparation, and more. For more information, contact us at 1-800-KAP-TEST or visit kaptest.com (AOL Keyword: kaplan).",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "0743230329"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9780743230322"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 500,
+          "printType": "BOOK",
+          "categories": [
+            "Law School Admission Test"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "0.3.3.0.preview.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=7OhjTmGTDf8C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=7OhjTmGTDf8C&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=7OhjTmGTDf8C&q=kaplan+test+prep&dq=kaplan+test+prep&hl=&cd=8&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=7OhjTmGTDf8C&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Kaplan_LSAT_2002_2003.html?hl=&id=7OhjTmGTDf8C"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=7OhjTmGTDf8C&hl=&source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Score Higher with effective strategies and advice from Kaplan&#39;s top instructors. Sign up for the Law School Edge. Tap into Kaplan&#39;s expertise with the Law School Edge, our free email newsletter."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "5lb9zwEACAAJ",
+        "etag": "Ch+UGWeaEw0",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/5lb9zwEACAAJ",
+        "volumeInfo": {
+          "title": "Kaplan Civil Service Exams",
+          "authors": [
+            "Kaplan Test Prep"
+          ],
+          "publisher": "Kaplan Test Prep",
+          "publishedDate": "2008-10-07",
+          "description": "The government is the largest employer in the United States, with nearly two million workers, a number that is growing every year. Kaplan Civil Service Exams, Second Edition helps government employment applicants master the material they need to succeed. Applicants are required to take and pass a comprehensive civil service exam, including people interested in specific government careers such as law enforcement, clerical work, air traffic control, as well as the majority of postal jobs. Features: A review of the information covered on the civil service exams Kaplan's unique score-raising strategies 6 practice exams Detailed answer explanations Advice and resources for all types of civil service exams",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "1419553194"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9781419553196"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 0,
+          "printType": "BOOK",
+          "categories": [
+            "Study Aids"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=5lb9zwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=5lb9zwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=5lb9zwEACAAJ&dq=kaplan+test+prep&hl=&cd=9&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=5lb9zwEACAAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Kaplan_Civil_Service_Exams.html?hl=&id=5lb9zwEACAAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=5lb9zwEACAAJ&hl=&source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Kaplan Civil Service Exams, Second Edition helps government employment applicants master the material they need to succeed."
+        }
+      },
+      {
+        "kind": "books#volume",
+        "id": "6qUyvgAACAAJ",
+        "etag": "8PlLPcqn5BA",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/6qUyvgAACAAJ",
+        "volumeInfo": {
+          "title": "Kaplan GMAT 800",
+          "subtitle": "Advanced Prep for Advanced Students",
+          "authors": [
+            "Kaplan Test Prep"
+          ],
+          "publisher": "Kaplan Test Prep",
+          "publishedDate": "2014-04-01",
+          "description": "Developed specifically for students aiming to score above the 90th percentile, Kaplan's GMAT 800 provides the prep you need to get the high score you want. The average GMAT score for students admitted to the top 10 business schools is nearly 720, and those top schools only accept about 15 percent of applicants. GMAT 800 can help you score higher and give you application a boost with advanced practice, focused review, and expert strategies. Focused Practice More than 300 of the toughest practice questions with detailed answer explanations Online Quiz Bank with 100 additional questions for extra practice Focused guidelines for tackling each Quantitative and Verbal question type Proven test-taking strategies for high-difficulty content Expert Guidance We know the test: The Kaplan team has spent years studying every GMAT-related document available. Kaplan's expert psychometricians ensure our practice questions and study materials are true to the test. We invented test prep—Kaplan (www.kaptest.com) has been helping students for almost 80 years. Our proven strategies have helped legions of students achieve their dreams.",
+          "industryIdentifiers": [
+            {
+              "type": "ISBN_10",
+              "identifier": "1618654063"
+            },
+            {
+              "type": "ISBN_13",
+              "identifier": "9781618654069"
+            }
+          ],
+          "readingModes": {
+            "text": false,
+            "image": false
+          },
+          "pageCount": 0,
+          "printType": "BOOK",
+          "categories": [
+            "Study Aids"
+          ],
+          "maturityRating": "NOT_MATURE",
+          "allowAnonLogging": false,
+          "contentVersion": "preview-1.0.0",
+          "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+          },
+          "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=6qUyvgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=6qUyvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+          },
+          "language": "en",
+          "previewLink": "http://books.google.com/books?id=6qUyvgAACAAJ&dq=kaplan+test+prep&hl=&cd=10&source=gbs_api",
+          "infoLink": "http://books.google.com/books?id=6qUyvgAACAAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Kaplan_GMAT_800.html?hl=&id=6qUyvgAACAAJ"
+        },
+        "saleInfo": {
+          "country": "US",
+          "saleability": "NOT_FOR_SALE",
+          "isEbook": false
+        },
+        "accessInfo": {
+          "country": "US",
+          "viewability": "NO_PAGES",
+          "embeddable": false,
+          "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+          "epub": {
+            "isAvailable": false
+          },
+          "pdf": {
+            "isAvailable": false
+          },
+          "webReaderLink": "http://play.google.com/books/reader?id=6qUyvgAACAAJ&hl=&source=gbs_api",
+          "accessViewStatus": "NONE",
+          "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+          "textSnippet": "Developed specifically for students aiming to score above the 90th percentile, Kaplan&#39;s GMAT 800 provides the prep you need to get the high score you want."
+        }
+      }
+    ]
+  }
+]

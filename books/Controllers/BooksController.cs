@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Azure;
 
 namespace books.Controllers
 {
@@ -117,12 +118,12 @@ namespace books.Controllers
         private async Task<List<BookInfo>> FetchBooksFromApiAsync()
         {
             var httpClient = new HttpClient();
-            var apiUrl = "https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep";
+            var apiUrl = "https://www.bing.com/books/v1/volumes?q=kaplan%20test%20prep";
+
 
             try
             {
                 var response = await httpClient.GetAsync(apiUrl);
-
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -141,7 +142,7 @@ namespace books.Controllers
                                 Title = item.volumeInfo.title,
                                 Publisher = item.volumeInfo.publisher,
                                 PublishedDate = item.volumeInfo.publishedDate,
-                                Description=item.volumeInfo.description
+                                Description = item.volumeInfo.description
 
                             });
                         }
@@ -152,10 +153,33 @@ namespace books.Controllers
                 else
                 {
                     Console.WriteLine($"API request failed with status code: {response.StatusCode}");
+                    var jsonFile = @"C:\Users\RMahajan\Desktop\BooksAPI_1\books\Controllers\booksss.json";
+                    using (StreamReader reader = new StreamReader(jsonFile))
+                    {
+                        var jsonString = reader.ReadToEnd();
+                        var bookInfos = JsonConvert.DeserializeObject<List<GoogleBooksApiResponse>>(jsonString);
+
+                         var bookInfo = new List<BookInfo>();
+                        foreach (var item in bookInfos[0].items)
+                        {
+                            bookInfo.Add(new BookInfo
+                            {
+                                Author = item.volumeInfo.authors != null ? string.Join(", ", item.volumeInfo.authors) : "No author",
+                                Title = item.volumeInfo.title,
+                                Publisher = item.volumeInfo.publisher,
+                                PublishedDate = item.volumeInfo.publishedDate,
+                                Description = item.volumeInfo.description
+                            });
+                        }
+
+                        return bookInfo;
+                        
+                    }
                 }
             }
             catch (Exception ex)
             {
+
                 Console.WriteLine($"API request failed with exception: {ex.Message}");
             }
 
