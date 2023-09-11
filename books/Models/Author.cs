@@ -2,7 +2,7 @@
 {
     public class Author
     {
-        public int author_id { get; set; }//int author_id=100;
+        public int author_id { get; set; }
         public string author_name { get; set; }
     }
 
