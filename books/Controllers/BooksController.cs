@@ -21,7 +21,40 @@ namespace books.Controllers
         {
             _configuration = configuration;
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAllBooks([FromQuery] bool seed = true)//seed=faalse
+        {
+            if (seed)
+            {
+                var booksFromDatabase = RetrieveBooksFromDatabase();
 
+                if (booksFromDatabase.Count > 0)
+                {
+                    return Ok(booksFromDatabase);
+                }
+                else
+                {
+                    return NotFound("No books found in the database.");
+                }
+            }
+            else
+            {
+                var booksFromApi = await FetchBooksFromApiAsync();
+                //     RetrieveBooksFromDatabase(booksFromApi);
+
+                if (booksFromApi.Count > 0)
+                {
+                    // await StoreBooksInDatabase(booksFromApi);
+                    List<BookInfo> bookInfos = booksFromApi;
+                    await StoreBooksInDatabase(bookInfos);
+                    return Ok(booksFromApi);
+                }
+                else
+                {
+                    return NotFound("No books found from the API.");
+                }
+            }
+        }
         [HttpGet("{bookId}")]
         public IActionResult GetBookById(int bookId)
         {
@@ -120,42 +153,7 @@ namespace books.Controllers
                 return false;
             }
         }
-
-
-        [HttpGet]
-        public async Task<IActionResult> GetAllBooks([FromQuery] bool seed = true)//seed=false
-        {
-            if (seed)
-            {
-                var booksFromDatabase = RetrieveBooksFromDatabase();
-
-                if (booksFromDatabase.Count > 0)
-                {
-                    return Ok(booksFromDatabase);
-                }
-                else
-                {
-                    return NotFound("No books found in the database.");
-                }
-            }
-            else
-            {
-                var booksFromApi = await FetchBooksFromApiAsync();
-                //     RetrieveBooksFromDatabase(booksFromApi);
-
-                if (booksFromApi.Count > 0)
-                {
-                    // await StoreBooksInDatabase(booksFromApi);
-                    List<BookInfo> bookInfos = booksFromApi;
-                    await StoreBooksInDatabase(bookInfos);
-                    return Ok(booksFromApi);
-                }
-                else
-                {
-                    return NotFound("No books found from the API.");
-                }
-            }
-        }
+        
         /// <summary>
         /// 
         /// </summary>
