@@ -2,7 +2,6 @@
 {
     public class Book
     {
-       // public int  book_id { get; set; }
         public string title { get; set; }
        
         public string publisher_name { get; set; }

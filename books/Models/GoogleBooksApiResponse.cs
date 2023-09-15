@@ -5,7 +5,6 @@ namespace books.Models
     public class BookInfo
     {
         public string Author { get; set; }
-        public string Id { get; set; }
         public string Title { get; set; }
         public string Publisher { get; set; }
         public string PublishedDate { get; set; }
@@ -19,6 +18,13 @@ namespace books.Models
         public string kind { get; set; }
         public int totalItems { get; set; }
         public List<GoogleBooksApiItem> items { get; set; }
+
+        public string Author { get; set; }
+        public string Title { get; set; }
+        public string Publisher { get; set; }
+        public string PublishedDate { get; set; }
+
+        public string Description { get; set; }
     }
 
     public class GoogleBooksApiItem
