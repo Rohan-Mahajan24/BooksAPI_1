@@ -1,3 +1,4 @@
+-- table creation schema
 
 -- Create the Authors table
 	CREATE TABLE Authors (

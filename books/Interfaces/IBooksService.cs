@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace books.Interfaces
 {
+
+    /// <summary>
+    /// IBookService contains all the Interfaces that are implemented in BooksService
+    /// </summary>
     public interface IBookService
     {
         Task<List<BookInfo>> FetchBooksFromApiAsync();
@@ -20,6 +24,10 @@ namespace books.Interfaces
 
         Task<List<BookInfo>> SeedDatabaseAsync();
         List<Book> GetBooksFromDatabase();
+
+        BookInfoModel PostintoBooksTable(BookInfoModel bookInfo);
+
+        BookInfoModel PutintoBooksTable(int bookId, BookInfoModel bookInfo);
 
 
 

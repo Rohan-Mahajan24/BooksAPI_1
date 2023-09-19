@@ -3,6 +3,7 @@ using books.Models;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace books.Services
@@ -17,6 +18,11 @@ namespace books.Services
      
         }
 
+        /// <summary>
+        /// RetrieveBookFromDatabase this method is used to retrieve the books from the database using bookId as the parameter
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
         public Book RetrieveBookFromDatabase(int bookId)
         {
             try
@@ -61,6 +67,12 @@ namespace books.Services
             return null;
         }
 
+
+        /// <summary>
+        /// DeleteBookByIdFromDatabase method deletes the repecting bookId provided as a parameter
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
         public bool DeleteBookByIdFromDatabase(int bookId)
         {
             try
@@ -87,34 +99,11 @@ namespace books.Services
             }
         }
 
-        public bool AddPublisherToDatabase(Publisher publisher)
-        {
-            try
-            {
-                string connectionString = _configuration.GetConnectionString("DefaultConnection");
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    string insertPublisherSql = "INSERT INTO Publishers (publisher_name, published_date) VALUES (@PublisherName, @PublishedDate)";
-                    SqlCommand insertPublisherCommand = new SqlCommand(insertPublisherSql, connection);
-                    insertPublisherCommand.Parameters.AddWithValue("@PublisherName", publisher.publisher_name);
-                    insertPublisherCommand.Parameters.AddWithValue("@PublishedDate", publisher.published_date);
-
-                    int rowsAffected = insertPublisherCommand.ExecuteNonQuery();
-
-                    return rowsAffected > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return false;
-            }
-        }
-
-
+        /// <summary>
+        /// RetrieveBooksFromDatabase() method is used to retrieve the values from the database
+        /// </summary>
+        /// <returns></returns>
         public List<Book> RetrieveBooksFromDatabase()
         {
             List<Book> books = new List<Book>();
@@ -160,14 +149,19 @@ namespace books.Services
             return books;
         }
 
-
+        /// <summary>
+        /// StoreBooksInDatabase() methods takes List<BookInfoModel> as parameter
+        /// This method is used for storing the result of API or jsonPathFile to Database
+        /// </summary>
+        /// <param name="bookInfos"></param>
+        /// <returns></returns>
         public async Task StoreBooksInDatabase(List<BookInfo> bookInfos)
         {
             string connectionString = _configuration.GetConnectionString("DefaultConnection");
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
+                await connection.OpenAsync();
 
                 foreach (var bookInfo in bookInfos)
                 {
@@ -177,7 +171,7 @@ namespace books.Services
 
                     int publisherId = GetOrCreatePublisherId(connection, bookInfo.Publisher, bookInfo.PublishedDate);
 
-                    int bookId = GetUniqueBookId(connection);
+                    int bookId = GetOrCreateBookId(connection);
 
                     string insertBookSql = "INSERT INTO Books (book_id, title, author_id, publisher_id, description) VALUES (@BookId, @Title, @AuthorId, @PublisherId, LEFT(@Description, 1000))";
                     SqlCommand insertBookCommand = new SqlCommand(insertBookSql, connection);
@@ -193,59 +187,200 @@ namespace books.Services
         }
 
 
+        /// <summary>
+        /// GetOrCreateAuthorId() 
+        /// This methods return the AuthorId if there exists some records else it returns the AuthorId i.e ,set as IDENTITY column in Table
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="author"></param>
+        /// <returns></returns>
         public int GetOrCreateAuthorId(SqlConnection connection, string author)
         {
-            string selectAuthorSql = "SELECT author_id FROM Authors WHERE author_name = @AuthorName";
-            SqlCommand authorCommand = new SqlCommand(selectAuthorSql, connection);
-            authorCommand.Parameters.AddWithValue("@AuthorName", author);
-
-            object authorIdResult = authorCommand.ExecuteScalar();
-
-            if (authorIdResult != null)
+            if (connection.State == ConnectionState.Closed)
             {
-                return (int)authorIdResult;
+                connection.Open();
             }
-            else
+            string selectAuthorSql = "SELECT author_id FROM Authors WHERE author_name = @AuthorName";
+            using (SqlCommand authorCommand = new SqlCommand(selectAuthorSql, connection))
             {
+                authorCommand.Parameters.AddWithValue("@AuthorName", author);
 
-                string insertAuthorSql = "INSERT INTO Authors (author_name) VALUES (@AuthorName); SELECT SCOPE_IDENTITY();";
-                SqlCommand insertAuthorCommand = new SqlCommand(insertAuthorSql, connection);
-                insertAuthorCommand.Parameters.AddWithValue("@AuthorName", author);
+                object authorIdResult = authorCommand.ExecuteScalar();
 
-                return Convert.ToInt32(insertAuthorCommand.ExecuteScalar());
+                if (authorIdResult != null)
+                {
+                    return (int)authorIdResult;
+                }
+                else
+                {
+
+                    string insertAuthorSql = "INSERT INTO Authors (author_name) VALUES (@AuthorName); SELECT SCOPE_IDENTITY();";
+                    SqlCommand insertAuthorCommand = new SqlCommand(insertAuthorSql, connection);
+                    insertAuthorCommand.Parameters.AddWithValue("@AuthorName", author);
+
+                    return Convert.ToInt32(insertAuthorCommand.ExecuteScalar());
+                }
             }
         }
 
 
-
+        /// <summary>
+        /// GetOrCreatePublisherId()
+        ///  This methods return the PublisherId if there exists some records else it returns the PublisherId i.e ,set as IDENTITY column in Table
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="publisherName"></param>
+        /// <param name="publishedDate"></param>
+        /// <returns></returns>
         public int GetOrCreatePublisherId(SqlConnection connection, string publisherName, string publishedDate)
         {
-            string selectPublisherSql = "SELECT publisher_id FROM Publishers WHERE publisher_name = @PublisherName AND published_date = @PublishedDate";
-            SqlCommand publisherCommand = new SqlCommand(selectPublisherSql, connection);
-            publisherCommand.Parameters.AddWithValue("@PublisherName", publisherName);
-            publisherCommand.Parameters.AddWithValue("@PublishedDate", publishedDate);
-
-            object publisherIdResult = publisherCommand.ExecuteScalar();
-
-            if (publisherIdResult != null)
+            if (connection.State == ConnectionState.Closed)
             {
-                return (int)publisherIdResult;
+                connection.Open();
             }
-            else
+            string selectPublisherSql = "SELECT publisher_id FROM Publishers WHERE publisher_name = @PublisherName AND published_date = @PublishedDate";
+            using (SqlCommand publisherCommand = new SqlCommand(selectPublisherSql, connection))
             {
+                publisherCommand.Parameters.AddWithValue("@PublisherName", publisherName);
+                publisherCommand.Parameters.AddWithValue("@PublishedDate", publishedDate);
 
-                string insertPublisherSql = "INSERT INTO Publishers (publisher_name, published_date) VALUES (@PublisherName, @PublishedDate); SELECT SCOPE_IDENTITY();";
-                SqlCommand insertPublisherCommand = new SqlCommand(insertPublisherSql, connection);
-                insertPublisherCommand.Parameters.AddWithValue("@PublisherName", publisherName);
-                insertPublisherCommand.Parameters.AddWithValue("@PublishedDate", publishedDate);
+                object publisherIdResult = publisherCommand.ExecuteScalar();
 
-                return Convert.ToInt32(insertPublisherCommand.ExecuteScalar());
+                if (publisherIdResult != null)
+                {
+                    return (int)publisherIdResult;
+                }
+                else
+                {
+
+                    string insertPublisherSql = "INSERT INTO Publishers (publisher_name, published_date) VALUES (@PublisherName, @PublishedDate); SELECT SCOPE_IDENTITY();";
+                    SqlCommand insertPublisherCommand = new SqlCommand(insertPublisherSql, connection);
+                    insertPublisherCommand.Parameters.AddWithValue("@PublisherName", publisherName);
+                    insertPublisherCommand.Parameters.AddWithValue("@PublishedDate", publishedDate);
+
+                    return Convert.ToInt32(insertPublisherCommand.ExecuteScalar());
+                }
             }
         }
 
-        public int GetUniqueBookId(SqlConnection connection)
+        /// <summary>
+        /// PostIntoBooks Method is used to add values into the database
+        /// </summary>
+        /// <param name="bookInfo"></param>
+        /// <returns></returns>
+        public BookInfoModel PostIntoBooks(BookInfoModel bookInfo)
         {
+            try
+            {
+                string connectionString = _configuration.GetConnectionString("DefaultConnection");
+                SqlConnection sqlConnection = new SqlConnection(connectionString);
+                sqlConnection.Open();
 
+                int bookId = GetOrCreateBookId(sqlConnection);
+                int authId = GetOrCreateAuthorId(sqlConnection, bookInfo.author_name);
+                int pubId = GetOrCreatePublisherId(sqlConnection, bookInfo.publisher_name, bookInfo.published_date);
+
+                SqlCommand insertBookCommand = new SqlCommand("INSERT INTO Books(book_id, title, author_id, publisher_id, description)" +
+                    "VALUES (@BookId, @Title, @Author_ID, @Publisher_ID, @Description)", sqlConnection);
+
+                insertBookCommand.Parameters.AddWithValue("@BookId", bookId);
+                insertBookCommand.Parameters.AddWithValue("@Title", bookInfo.title);
+                insertBookCommand.Parameters.AddWithValue("@Author_ID", authId);
+                insertBookCommand.Parameters.AddWithValue("@Publisher_ID", pubId);
+                insertBookCommand.Parameters.AddWithValue("@Description", bookInfo.description);
+
+                insertBookCommand.ExecuteNonQuery();
+
+                sqlConnection.Close();
+
+                var list = new BookInfoModel
+                {
+                    book_id = bookId,
+                    title = bookInfo.title,
+                    author_id = authId,
+                    publisher_id = pubId,
+                    description = bookInfo.description,
+                    author_name = bookInfo.author_name,
+                    publisher_name = bookInfo.publisher_name
+                };
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while inserting the book: " + ex.Message);
+            }
+        }
+
+
+        /// <summary>
+        /// PutIntoBooks Method is used to update the values in the database
+        /// </summary>
+        /// <param name="bookInfo"></param>
+        /// <returns></returns>
+        public BookInfoModel PutIntoBooks(int bookId, BookInfoModel bookInfo)
+        { 
+            try
+            {
+                
+                string connectionString = _configuration.GetConnectionString("DefaultConnection");
+                SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                List<BookInfoModel> list = new List<BookInfoModel>();
+               
+                int authId = GetOrCreateAuthorId(sqlConnection, bookInfo.author_name);
+                int pubId = GetOrCreatePublisherId(sqlConnection, bookInfo.publisher_name, bookInfo.published_date);
+
+                SqlCommand sqlCommand = new SqlCommand("UPDATE Books SET " +
+                    "title = ISNULL(@Title, title) ," +
+                   "author_id = ISNULL(@Author_ID, author_id), " +
+                    "publisher_id = ISNULL(@Publisher_ID, publisher_id), " +
+                    "description = ISNULL(@Description, description) " +
+                    "WHERE book_id = @Id;", sqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("@Id", bookId);
+                sqlCommand.Parameters.AddWithValue("@Title", bookInfo.title);
+                sqlCommand.Parameters.AddWithValue("@Author_ID", authId);
+                sqlCommand.Parameters.AddWithValue("@Publisher_ID", pubId);
+                sqlCommand.Parameters.AddWithValue("@Description", bookInfo.description);
+
+                //sqlConnection.Open();
+                sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+
+                var book = new BookInfoModel
+                {
+                    book_id = bookId,
+                    title = bookInfo.title,
+                    author_id = authId,
+                    publisher_id = pubId,
+                    description = bookInfo.description,
+                    published_date = bookInfo.published_date,
+                    author_name= bookInfo.author_name,
+                    publisher_name= bookInfo.publisher_name
+                };
+
+                return book;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while updating the book: " + ex.Message);
+            }
+           
+        }
+
+
+        /// <summary>
+        /// GetOrCreateBookId used to return the maximum book_id 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <returns></returns>
+        public int GetOrCreateBookId(SqlConnection connection)
+        {
             string selectMaxBookIdSql = "SELECT MAX(book_id) FROM Books";
             SqlCommand selectMaxBookIdCommand = new SqlCommand(selectMaxBookIdSql, connection);
             var maxId = selectMaxBookIdCommand.ExecuteScalar();
@@ -257,9 +392,7 @@ namespace books.Services
             {
                 return (int)maxId + 1;
             }
-
         }
-
     }
 }
 
