@@ -90,7 +90,7 @@ namespace books.Controllers
             var postResult = _bookService.PostintoBooksTable(bookInfo);
             if (postResult != null)
             {
-                return Ok(postResult);
+                    return Ok($"Insert is sucessfull for Book_ID {postResult.book_id} ");
             }
             else
             {
@@ -106,8 +106,11 @@ namespace books.Controllers
 
         [HttpPut("{bookId}")]
         public IActionResult PutIntoBooks(int bookId, [FromBody] BookInfoModel bookInfo)
+
         {
+
             var putResult = _bookService.PutintoBooksTable(bookId, bookInfo);
+
             if (putResult != null)
             {
                 return Ok(putResult);
