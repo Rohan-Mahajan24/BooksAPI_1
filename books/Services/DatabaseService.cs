@@ -331,7 +331,19 @@ namespace books.Services
                     sqlConnection.Open();
                 }
                 List<BookInfoModel> list = new List<BookInfoModel>();
-               
+
+                SqlCommand checkBookCommand = new SqlCommand("SELECT COUNT(*) FROM Books WHERE book_id = @Id;", sqlConnection);
+                checkBookCommand.Parameters.AddWithValue("@Id", bookId);
+
+                int bookCount = (int)checkBookCommand.ExecuteScalar();
+
+                if (bookCount == 0)
+                {
+                    Console.WriteLine($"{bookId} Book ID not found");
+                    return new BookInfoModel { book_id = bookId,description = $"{bookId} Book ID not found" };
+                    
+                }
+
                 int authId = GetOrCreateAuthorId(sqlConnection, bookInfo.author_name);
                 int pubId = GetOrCreatePublisherId(sqlConnection, bookInfo.publisher_name, bookInfo.published_date);
 
